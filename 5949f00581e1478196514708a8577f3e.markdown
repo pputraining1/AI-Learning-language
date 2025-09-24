@@ -1,0 +1,1440 @@
+---
+title: |
+  []{#_vtug00f2tt6w .anchor}Dokumentasi**\
+  Aplikasi Booking Hotel**
+---
+
+![garis
+pendek](vertopal_5949f00581e1478196514708a8577f3e/media/image1.png){width="0.4895833333333333in"
+height="6.25e-2in"}
+
+Dokumentasi aplikasi Booking Hotel denga Spring Boot (BE) dan React
+(FE)\
+1 Juli 2025
+
+#  
+
+# Daftar Isi
+
+[**Daftar Isi 2**](#daftar-isi)
+
+[**Pendahuluan 2**](#pendahuluan)
+
+[**Teknologi dan library 3**](#teknologi-dan-library)
+
+> [Frontend 3](#frontend)
+>
+> [Backend 4](#backend)
+>
+> [Authentication & Security 4](#authentication-security)
+
+[**Struktur Project 4**](#struktur-project)
+
+> [Frontend 4](#frontend-1)
+>
+> [Backend 5](#backend-1)
+
+[**Struktur Database 5**](#struktur-database)
+
+[**Penggunaan AI dalam Project 6**](#penggunaan-ai-dalam-project)
+
+[**Drafting Task 6**](#drafting-task)
+
+[**Instalasi Gemini CLI 6**](#instalasi-gemini-cli)
+
+[**Instalasi Qwen Code 7**](#instalasi-qwen-code)
+
+[**Metode Kerja 10**](#metode-kerja)
+
+> [Metode Prompting 10](#metode-prompting)
+>
+> [Kerangka Prompting 4C 11](#kerangka-prompting-4c)
+>
+> [Code Review 13](#code-review)
+
+[**Implementasi 14**](#implementasi)
+
+> [Backend 15](#backend-2)
+>
+> [Create Project 15](#create-project)
+>
+> [Database & Models 17](#database-models)
+>
+> [Business Logic 19](#business-logic)
+>
+> [Dokumentasi API 21](#dokumentasi-api)
+>
+> [Frontend 24](#frontend-2)
+>
+> [Pages & Components 24](#pages-components)
+>
+> [State & API 28](#state-api)
+
+# Guide
+
+### **Pemahaman Project (Wajib untuk Semua)**
+
+#### **1. Pendahuluan → Pahami konteks project**
+
+# **Header dokumen**: \# Pendahuluan
+
+-   # **Tujuan Aplikasi**: Hotel Booking management system
+
+-   # **Target Pengguna**: Admin hotel atau Resepsionis
+
+-   # **Fitur Utama**: Booking, dashboard monitoring, check-in/out, room service
+
+-   # **Arsitektur**: Spring Boot (Backend) + React (Frontend) + MySQL
+
+#### **2. Teknologi dan Library → Stack teknologi yang digunakan**
+
+# **Header dokumen**: \# Teknologi dan library
+
+-   # **Frontend Stack**: React 19.1.1, TypeScript, Vite, Redux Toolkit, Tailwind CSS
+
+-   # **Backend Stack**: Spring Boot 3.2.0, Spring Security, JPA, MySQL
+
+-   # **Authentication**: JWT Tokens, OAuth2, BCrypt
+
+-   # **Sub-bab**: Frontend, Backend, Authentication & Security
+
+#### **3. Struktur Project → Organisasi folder dan file**
+
+# **Header dokumen**: \# Struktur Project
+
+-   # **Frontend Structure**: Features-based organization, components, hooks, store
+
+-   # **Backend Structure**: Clean architecture dengan controller, service, repository
+
+-   # **Sub-bab**: Frontend, Backend
+
+#### **4. Struktur Database → ERD dan relasi tabel**
+
+# **Header dokumen**: \# Struktur Database
+
+-   # **Visual ERD**: Diagram hubungan antar tabel
+
+-   # **Room entity**: Fields dan constraints yang diperlukan
+
+# 
+
+### **Workflow Development** 
+
+#### **1. Penggunaan AI dalam Project → Role AI dalam development**
+
+# **Header dokumen**: \# Penggunaan AI dalam Project
+
+-   # **Code Architect**: Rancang struktur aplikasi
+
+-   # **Full-Stack Developer**: Implementasi fitur
+
+-   # **Code Reviewer**: Review kode dan bug detection
+
+-   # **Documentation Writer**: Buat dokumentasi
+
+#### **2. Drafting Task → User story breakdown**
+
+# **Header dokumen**: \# Drafting Task
+
+-   # **Task Categories**: Database & Models, Business Logic, State & API, Pages & Components
+
+-   # **User Story**: \"User dapat menambahkan data kamar baru\"
+
+#### **3. Instalasi Gemini CLI → Setup AI tools**
+
+# **Header dokumen**: \# Instalasi Gemini CLI
+
+-   # **Prerequisites**: Node.js installation
+
+-   # **Setup Steps**: Install, login, API key configuration
+
+-   # **Commands**: npm install -g \@google/gemini-cli
+
+#### **4. Instalasi Qwen Code → Setup AI coding assistant**
+
+# **Header dokumen**: \# Instalasi Qwen Code
+
+-   # **Installation**: npm install -g \@qwen-code/qwen-code@latest
+
+-   # **Authentication**: OAuth login process
+
+-   # **Verification**: Version check command
+
+# 
+
+### **Metodologi Development** 
+
+### **1. Metode Prompting → AI prompt engineering techniques**
+
+# **Header dokumen**: \# Metode Kerja → \## Metode Prompting
+
+-   # **Persiapan Input**: Struktur bahan (user story, schema, ERD)
+
+-   # **High-level Prompting**: Arsitektur dan API design
+
+-   # **Incremental Prompting**: Modular development approach
+
+-   # **Design-to-Code**: Figma mockup ke React components
+
+-   # **Validation & Refinement**: Check acceptance criteria
+
+-   # **Iterasi & Integrasi**: Gabung komponen dan refactor
+
+#### **2. Kerangka Prompting 4C → Structured prompting framework**
+
+# **Header dokumen**: \# Metode Kerja → \## Kerangka Prompting 4C
+
+-   # **Context**: Background, framework, domain problem
+
+-   # **Constraint**: Aturan, validasi, style coding
+
+-   # **Command**: Instruksi utama yang spesifik
+
+-   # **Check**: Evaluasi dan format output yang diinginkan
+
+#### **3. Code Review → Quality assurance process**
+
+# **Header dokumen**: \# Metode Kerja → \## Code Review
+
+-   # **User Story Check**: Kesesuaian dengan acceptance criteria
+
+-   # **Code Quality**: Naming convention, structure, clean code
+
+-   # **Manual Testing**: Backend (Postman), Frontend (browser)
+
+-   # **Database Validation**: Schema dan constraint verification
+
+-   # **Static Analysis**: SonarCube, ESLint, Prettier integration
+
+-   # **AI Iteration**: Feedback loop untuk perbaikan
+
+# 
+
+### **Implementasi Backend** 
+
+#### **1. Create Project → Backend project initialization**
+
+# **Header dokumen**: \# Implementasi → \## Backend → \## Create Project
+
+-   # **Project Structure**: Complete Spring Boot folder organization
+
+-   # **Maven Setup**: Dependencies dan configuration
+
+-   # **AI Command**: Automated project scaffolding
+
+#### **2. Database & Models → Entity dan data layer**
+
+# **Header dokumen**: \# Implementasi → \## Database & Models
+
+-   # **MySQL Configuration**: Database connection setup
+
+-   # **Room Entity**: JPA annotations, constraints, enums
+
+-   # **DTO Classes**: Request/Response data transfer objects
+
+-   # **Repository**: JpaRepository extension
+
+-   # **Schema**: Table creation dengan Hibernate
+
+#### **3. Business Logic → Service layer implementation**
+
+# **Header dokumen**: \# Implementasi → \## Business Logic
+
+-   # **RoomService**: createRoom() method dengan validasi
+
+-   # **Controller Layer**: REST API endpoint POST /api/rooms
+
+-   # **Exception Handling**: Custom exceptions dan global handler
+
+-   # **Validation**: Uniqueness check dan input validation
+
+#### **4. Dokumentasi API → API documentation**
+
+# **Header dokumen**: \# Implementasi → \## Dokumentasi API
+
+-   # **Endpoint Description**: Method, path, functionality
+
+-   # **Request/Response Format**: JSON examples
+
+-   # **Error Handling**: Status codes dan error messages
+
+-   # **Testing Samples**: cURL commands dan Postman examples
+
+# 
+
+### **Implementasi Frontend**
+
+### **1. Pages & Components → UI development**
+
+# **Header dokumen**: \# Implementasi → \## Frontend → \## Pages & Components
+
+-   # **Component Structure**: AddRoomPage, RoomForm dengan validation
+
+-   # **UI Slicing**: Figma design ke React components
+
+-   # **Form Validation**: React Hook Form + Zod integration
+
+-   # **Responsive Design**: Desktop dan mobile compatibility
+
+-   # **Navigation**: Routing dan page transitions
+
+-   # **Notification System**: Success/error feedback
+
+#### **2. State & API → State management dan API integration**
+
+# **Header dokumen**: \# Implementasi → \## State & API
+
+-   # **Redux Setup**: roomSlice dengan createAsyncThunk
+
+-   # **Service Layer**: API calls dengan axios
+
+-   # **TypeScript Types**: Request/Response DTO interfaces
+
+-   # **Error Handling**: API error management
+
+-   # **State Management**: Loading, success, error states
+
+# 
+
+# Pendahuluan
+
+**Tujuan Aplikasi**: Hotel Booking adalah aplikasi manajemen hotel yang
+dikembangkan dengan arsitektur fullstack modern menggunakan **React
+TypeScript** untuk frontend dan **Spring Boot** untuk backend.
+
+**Target Pengguna**: Admin hotel atau Resepsionis.
+
+**Tujuan Aplikasi:**
+
+-   Manajemen booking hotel secara digital
+
+-   Dashboard monitoring real-time untuk tingkat okupansi
+
+-   Sistem check-in dan check-out otomatis
+
+-   Manajemen kamar dan fasilitas hotel
+
+-   Sistem room service dan billing otomatis
+
+**Arsitektur Teknologi**:
+
+**Backend** → Spring Boot (REST API, Security, JPA/Hibernate).
+
+**Frontend** → React (SPA, UI/UX, integrasi API).
+
+**Database** → MySQL.
+
+**AI** **Agent** → Digunakan untuk asistensi coding, dokumentasi, dan
+optimasi workflow.
+
+# Teknologi dan library
+
+## Frontend
+
+  -------------------------------------------------------------------------
+  **Teknologi**          **Versi**   **Fungsi**
+  ---------------------- ----------- --------------------------------------
+  React                  19.1.1      JavaScript library untuk UI
+
+  TypeScript             5.8.3       Static typing untuk JavaScript
+
+  Vite                   7.1.2       Build tool dan dev server
+
+  Redux Toolkit          2.8.2       State management
+
+  React Router           7.8.2       Client-side routing
+
+  Tailwind CSS           4.1.12      Utility-first CSS framework
+
+  Axios                  1.11.0      HTTP client untuk API calls
+
+  Chart.js               4.5.0       Data visualization library
+
+  React Chart.js 2       5.3.0       React wrapper untuk Chart.js
+  -------------------------------------------------------------------------
+
+## Backend
+
+  ---------------------------------------------------------------------------
+  **Teknologi**               **Versi**   **Fungsi**
+  --------------------------- ----------- -----------------------------------
+  Spring Boot                 3.2.0       Java framework untuk REST API
+
+  Spring Security             \-          Authentication & authorization
+
+  Spring Data JPA             \-          Database access layer
+
+  OAuth2 Resource Server      \-          JWT token validation
+
+  MySQL Connector             8.0.33      Database driver
+
+  JJWT                        0.11.5      JWT token handling
+
+  Spring Boot DevTools        \-          Development utilities
+
+  Hibernate                   \-          ORM framework
+  ---------------------------------------------------------------------------
+
+## Authentication & Security
+
+-   JWT Tokens -- Stateless authentication
+
+-   CORS Configuration -- Cross-origin resource sharing
+
+-   Password Encoding -- BCrypt hashing
+
+# Struktur Project
+
+## Frontend
+
+frontend/
+
+│── public/ \# Static files (images, icons, manifest, dll)
+
+│── src/
+
+│ │── app/ \# (khusus Next.js App Router)
+
+│ │ │── layout.tsx \# Layout global
+
+│ │ │── page.tsx \# Halaman utama
+
+│ │ └── \...
+
+│ │
+
+│ │── features/ \# Modularisasi by-feature
+
+│ │ │── auth/ \# Fitur authentication
+
+│ │ │ │── components/
+
+│ │ │ │── hooks/
+
+│ │ │ │── services/
+
+│ │ │ └── pages/
+
+│ │ │── dashboard/ \# Fitur dashboard
+
+│ │ │ │── components/
+
+│ │ │ └── pages/
+
+│ │
+
+│ │── components/ \# Reusable UI components (button, modal, input)
+
+│ │── hooks/ \# Reusable React hooks
+
+│ │── lib/ \# Library/helper (fetch wrapper, formatters)
+
+│ │── store/ \# State management (Redux/Zustand)
+
+│ │── styles/ \# Global CSS/Tailwind config
+
+│ │── types/ \# TypeScript types/interfaces
+
+│ │── utils/ \# Utility functions
+
+│
+
+│── .env \# Environment variables
+
+│── package.json
+
+│── tsconfig.json
+
+## Backend
+
+backend/
+
+│── src/
+
+│ └── main/
+
+│ └── java/com/example/app/
+
+│ │── AppApplication.java \# Main entry
+
+│ │
+
+│ │── config/ \# Configuration (security, CORS, beans)
+
+│ │── controller/ \# REST Controllers
+
+│ │── dto/ \# Data Transfer Objects
+
+│ │── entity/ \# JPA Entities
+
+│ │── exception/ \# Custom exceptions & handler
+
+│ │── repository/ \# JPA Repositories (DAO)
+
+│ │── service/ \# Business logic (Service layer)
+
+│ │── mapper/ \# DTO ↔ Entity converter
+
+│ │── util/ \# Helper utils (date, formatter)
+
+│
+
+│ └── resources/
+
+│ │── application.properties \# App config
+
+│ │── application-dev.properties \# Dev config
+
+│ │── application-prod.properties \# Prod config
+
+│ └── static/ \# Static files (jika perlu)
+
+│
+
+│── pom.xml \# Maven dependencies
+
+# Struktur Database
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image5.png){width="6.267716535433071in"
+height="2.888888888888889in"}
+
+# Penggunaan AI dalam Project
+
+-   **Code Architect:** Merancang struktur aplikasi dan arsitektur
+    > database
+
+-   **Full-Stack Developer:** Implementasi fitur frontend dan backend
+
+-   **Code Reviewer:** Review kode untuk best practices dan bug
+    > detection
+
+-   **Documentation Writer:** Pembuatan dokumentasi komprehensif
+
+# Drafting Task
+
+**User Story**
+
+-   Database & Models (BE)
+
+-   Business Logic (BE)
+
+-   State & API (FE)
+
+-   Pages & Components (FE)
+
+# Instalasi Gemini CLI
+
+1.  Pastikan [[Node.js]{.underline}](http://node.js) sudah terinstall
+
+2.  Siapkan akun google dan coba signup ke website
+    > [[https://aistudio.google.com/]{.underline}](https://aistudio.google.com/)
+
+3.  Install gemini CLI dengan menjalankan command pada terminal, **npm
+    > install -g \@google/gemini-cli**
+
+4.  Setelah selesai instalasi, jalankan command **gemini** pada terminal
+
+> ![](vertopal_5949f00581e1478196514708a8577f3e/media/image20.png){width="6.267716535433071in"
+> height="3.638888888888889in"}
+
+5.  Pilih opsi **Login with Google**, atau **Use Gemini API Key**. untuk
+    > opsi menggunakan **Use Gemini API Key** anda dapat generate **API
+    > Key** dari website
+    > [[https://aistudio.google.com/]{.underline}](https://aistudio.google.com/)
+    > dan jalankan command **export GEMINI_API_KEY=\"YOUR_API_KEY\"**
+    > pada terminal untuk melakukan set **API Key**
+
+# Instalasi Qwen Code
+
+1.  Sama seperti setup Gemini CLI, Pastikan
+    > [[Node.js]{.underline}](http://node.js) sudah terinstall
+
+2.  Install Qwen Code dengan menjalankan command pada terminal, **npm
+    > install -g \@qwen-code/qwen-code@latest**
+
+3.  Check apakah Qwen Code sudah berhasil terinstall dengan menjalankan
+    > command, **qwen \--version**
+
+> ![](vertopal_5949f00581e1478196514708a8577f3e/media/image30.png){width="6.267716535433071in"
+> height="4.111111111111111in"}
+
+4.  Untuk menjalankan Qwen Code, jalankan command **qwen** pada command
+    > prompt atau terminal
+
+5.  Login menggunakan **Qwen OAuth**, kemudian signin atau signup di
+    > browser
+
+> ![](vertopal_5949f00581e1478196514708a8577f3e/media/image2.png){width="6.267716535433071in"
+> height="4.083333333333333in"}
+>
+> ![](vertopal_5949f00581e1478196514708a8577f3e/media/image15.png){width="6.267716535433071in"
+> height="3.0694444444444446in"}
+>
+> ![](vertopal_5949f00581e1478196514708a8577f3e/media/image4.png){width="6.267716535433071in"
+> height="5.472222222222222in"}
+
+# Metode Kerja
+
+## Metode Prompting
+
+1.  **Persiapan Input**
+
+-   Kumpulkan semua bahan: user story, database schema, ERD, acceptance
+    > criteria, dan mockup Figma.
+
+-   Strukturkan dalam format rapi (misalnya markdown atau doc). Contoh:
+
+2.  **High-level Prompting**
+
+> Gunakan AI untuk membuat rancangan awal: arsitektur, API design,
+> struktur folder React & Spring Boot.
+>
+> Prompt contoh:
+
+3.  **Incremental Prompting (Modular)**
+
+> Jangan langsung minta full code satu kali. Bagi jadi 4 kategori besar:
+
+-   Database & Models (Spring Boot Entities, JPA, DTO)
+
+-   Business Logic (Service & Repository)
+
+-   API Layer (Controller + Request/Response)
+
+-   Frontend (React Components + State Management + API calls)
+
+> Contoh prompt untuk model:
+
+4.  **Design-to-Code Prompting (Mockup → Component)**
+
+-   Untuk frontend (Figma → React):
+
+-   Kita bisa export figma ke image
+
+-   Atau menggunakan MCP Server dari Figma
+
+-   Mulai dari layout dasar → minta AI generate JSX dengan Tailwind.
+
+-   Lanjut ke state & API integration.
+
+-   Gunakan prompt slicing → satu halaman per prompt agar hasil lebih
+    > bersih.
+
+> Contoh prompt:
+
+5.  **Validation & Refinement**
+
+> Setelah AI generate, **cek acceptance criteria** satu per satu.
+>
+> Jika ada gap, gunakan prompt lanjutan:
+
+6.  **Iterasi & Integrasi**
+
+> Setelah semua komponen modular siap, gabungkan manual.
+>
+> Gunakan AI untuk refactor:
+
+## Kerangka Prompting 4C
+
+4C adalah kerangka untuk membuat prompt yang jelas, terstruktur, dan
+bisa diulang ketika kita minta AI generate kode atau solusi.
+
+Tujuannya: mengurangi jawaban "ngaco" dan memastikan hasil sesuai
+kebutuhan developer.
+
+1.  **Context**
+
+> Memberikan latar belakang yang cukup agar AI tahu lingkungan & tujuan.
+
+-   Framework / tools (React, Spring Boot, PostgreSQL, Tailwind, Redux).
+
+-   Domain problem (booking hotel, sistem rumah sakit, e-commerce).
+
+-   Level detail (apakah butuh full code, hanya function, atau
+    > arsitektur).
+
+> Contoh:
+
+2.  **Constraint**
+
+> Aturan & batasan yang harus dipatuhi AI dalam hasilnya.
+
+-   Acceptance criteria.
+
+-   Validasi tertentu.
+
+-   Style coding (DTO wajib, RESTful, Clean Architecture).
+
+-   Library / framework yang boleh digunakan.
+
+> Contoh:
+
+3.  **Command**
+
+> Instruksi utama: apa yang ingin dibuat/generate.
+
+-   Bisa berupa generate code, buat arsitektur, atau refactor.
+
+-   Fokus 1 tugas per prompt (lebih rapi & terarah).
+
+> Contoh:
+
+4.  **Check**
+
+> Bagian ini membantu AI mengevaluasi hasilnya sendiri sebelum
+> memberikan output.
+
+-   Format output yang diinginkan (Java class, TSX file).
+
+-   Cara validasi (harus sesuai acceptance criteria, harus ada validasi
+    > unik, dll).
+
+-   Kadang juga kita bisa tambahkan expected output (contoh JSON
+    > response).
+
+Contoh:
+
+> **Contoh Full Prompt dengan Kerangka Prompting 4C:**
+
+## Code Review
+
+1.  **Cek Kesesuaian dengan User Story & Acceptance Criteria**
+
+-   Buka kembali user story + acceptance criteria.
+
+-   Buat checklist.
+
+> Contoh untuk "User dapat menambahkan data kamar baru":
+
+1.  Entity Room ada dengan field id dan roomNumber unik
+
+2.  Service createRoom() ada, validasi uniqueness jalan
+
+3.  API POST /api/rooms tersedia
+
+4.  Frontend punya form tambah room
+
+5.  Ada notifikasi sukses/error
+
+```{=html}
+<!-- -->
+```
+2.  **Code Quality & Clean Code Check**
+
+-   Check naming convention, apakah nama class, dan variable sudah
+    > sesuai
+
+-   Check structure project apakah sudah sesuai
+
+-   Check pada IDE apakah masih ada warning atau error
+
+-   Check apakah ada redudancy atau duplicate logic
+
+-   Check error handling apakah sudah konsisten
+
+3.  **Testing Manual**
+
+-   Pada backend project dapat dijalankan dan test endpoint API
+    > menggunakan tools seperti **Postman**
+
+-   Pada frontend project dapat dijalankan dan di test apakah fitur
+    > sudah sesuai dengan user story atau belum
+
+4.  **Cross-Check dengan Database**
+
+> Pastikan struktur tabel dan constraint yang terbentuk pada database
+> sudah sesuai
+
+5.  **Static Analysis & Linter**
+
+> **Backend:** pada IDE dapat menginstall extension seperti Sonarcube.
+>
+> **Frontend:** pada IDE dapat menginstall extension ESLint + Prettier.
+>
+> Agar mempermudah untuk mendeteksi issue pada IDE
+
+6.  **Iterasi dengan AI**
+
+> Kalau saat manual check Anda temukan issue, kembalikan ke AI dengan
+> prompt spesifik:
+
+# Implementasi
+
+**User Story**
+
+User dapat menambahkan data kamar baru
+
+-   **Database & Models**
+
+> \- Create rooms table schema
+>
+> \- Create Room entity dengan JPA annotations
+>
+> \- Create RoomRequestDTO dan RoomResponseDTO
+>
+> \- Create RoomRepository extending JpaRepository
+
+-   **Business Logic**
+
+> \- Create createRoom() method di RoomService
+>
+> \- Create POST /api/rooms endpoint di RoomController
+>
+> \- Add validation untuk room number uniqueness
+
+-   **State & API**
+
+> \- Create roomSlice.ts untuk Redux state
+>
+> \- Create roomService.ts dengan createRoom() API call
+
+-   **Pages & Components**
+
+> \- Create AddRoomPage.tsx component
+>
+> \- Create RoomForm.tsx dengan validation
+>
+> \- Add navigation dari Room List ke Add Room page
+>
+> \- Create success/error notification
+
+## Backend
+
+## Create Project
+
+Jalankan prompt berikut untuk create project dari awal:
+
+Buatkan saya project backend dengan nama 'booking-be' menggunakan Spring
+Boot dengan struktur folder berikut:
+
+booking-be/
+
+│── src/
+
+│ └── main/
+
+│ └── java/com/booking/app/
+
+│ │── AppApplication.java \# Main entry
+
+│ │
+
+│ │── config/ \# Configuration (security, CORS, beans)
+
+│ │── controller/ \# REST Controllers
+
+│ │── dto/ \# Data Transfer Objects
+
+│ │── entity/ \# JPA Entities
+
+│ │── exception/ \# Custom exceptions & handler
+
+│ │── repository/ \# JPA Repositories (DAO)
+
+│ │── service/ \# Business logic (Service layer)
+
+│ │── mapper/ \# DTO ↔ Entity converter
+
+│ │── util/ \# Helper utils (date, formatter)
+
+│
+
+│ └── resources/
+
+│ │── application.properties \# App config
+
+│ │── application-dev.properties \# Dev config
+
+│ │── application-prod.properties \# Prod config
+
+│ └── static/ \# Static files (jika perlu)
+
+│
+
+│── pom.xml \# Maven dependencies
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image19.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image21.png){width="10.64062554680665in"
+height="5.991979440069991in"}
+
+Muncul konfirmasi dari AI untuk melakukan eksekusi, jika ada yang belum
+sesuai bisa pilih opsi 3 dan berikan inputan kepada AI.
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image29.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+## Database & Models
+
+Jalankan prompt berikut:
+
+Setup Spring Boot menggunakan Hibernate JPA dengan konfigurasi database
+MySQL localhost:
+
+\- host: localhost
+
+\- port: 3306
+
+\- database: hotel_db
+
+\- username: root
+
+\- password:
+
+1\. Buat schema \'rooms\' table di MySQL dengan field-field berikut
+(deskripsi sederhana):
+
+\- id (Long, \@Id, \@GeneratedValue)
+
+\- adultCapacity (int)
+
+\- childrenCapacity (int)
+
+\- createdAt (LocalDateTime, \@CreationTimestamp)
+
+\- price (BigDecimal)
+
+\- roomNumber (String, unique)
+
+\- updatedAt (LocalDateTime, \@UpdateTimestamp, nullable)
+
+\- description (String, nullable)
+
+\- isActive (boolean)
+
+\- roomType (Enum: STANDARD, DELUXE, SUITE,
+\@Enumerated(EnumType.STRING))
+
+2\. Buat entity class \'Room\' di package \'entity\' dengan Hibernate
+annotations sesuai schema di atas.
+
+3\. Buat DTO di package \'dto\':
+
+\- \'RoomRequestDTO\' untuk input request
+
+\- \'RoomResponseDTO\' untuk output response
+
+4\. Buat \'RoomRepository\' di package \'repository\' yang extend
+JpaRepository\<Room, Long\>.
+
+5\. Pastikan Hibernate mengelola entity \'Room\':
+
+\- Mapping kolom \'roomNumber\' dengan unique constraint
+
+\- Mapping kolom \'createdAt\' dan \'updatedAt\' dengan otomatisasi
+Hibernate
+
+\- Mapping enum \'roomType\' dengan \'@Enumerated(EnumType.STRING)\'
+
+6\. Atur \'application.properties\' untuk koneksi ke MySQL:
+
+\- spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db
+
+\- spring.datasource.username=root
+
+\- spring.datasource.password=root
+
+\- spring.jpa.hibernate.ddl-auto=update
+
+\- spring.jpa.show-sql=true
+
+\-
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+Gunakan praktik clean code sesuai struktur project Spring Boot di atas.
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image28.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image26.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+## Business Logic
+
+Jalankan prompt berikut:
+
+Tambahkan pada project backend Spring Boot berikut:
+
+1\. Buat method \'createRoom(RoomRequestDTO request)\' di
+\'RoomService\':
+
+\- Menerima data dari RoomRequestDTO
+
+\- Mengecek apakah roomNumber sudah ada di database (gunakan
+RoomRepository)
+
+\- Jika sudah ada, lempar custom exception
+\'RoomAlreadyExistsException\'
+
+\- Jika belum ada, simpan data baru ke table \'rooms\'
+
+\- Return RoomResponseDTO setelah berhasil disimpan
+
+2\. Buat endpoint POST \'/api/rooms\' di \'RoomController\':
+
+\- Menerima request body JSON yang dipetakan ke RoomRequestDTO
+
+\- Memanggil \'roomService.createRoom()\'
+
+\- Mengembalikan response dalam bentuk RoomResponseDTO dengan status 201
+CREATED
+
+\- Tangani exception \'RoomAlreadyExistsException\' dan kembalikan
+status 400 BAD REQUEST dengan pesan error
+
+3\. Tambahkan validasi untuk roomNumber uniqueness:
+
+\- Pada level DTO gunakan \'@NotBlank\' untuk memastikan tidak kosong
+
+\- Pada level service pastikan roomNumber tidak duplikat dengan query ke
+RoomRepository
+
+\- Gunakan custom exception untuk error handling
+
+4\. Pastikan semua class berada di package sesuai struktur:
+
+\- \'controller/RoomController.java\'
+
+\- \'service/RoomService.java\'
+
+\- \'dto/RoomRequestDTO.java\' dan \'dto/RoomResponseDTO.java\'
+
+\- \'exception/RoomAlreadyExistsException.java\'
+
+\- \'repository/RoomRepository.java\'
+
+\- \'entity/Room.java\'
+
+5\. Pastikan semua kode menggunakan praktik clean architecture Spring
+Boot:
+
+\- DTO dipakai hanya di lapisan controller/service
+
+\- Entity hanya di repository/service
+
+\- Validasi pakai Hibernate Validator (\'@NotBlank\', dsb)
+
+\- Exception ditangani oleh global exception handler di package
+\'exception\'
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image37.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image22.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+## Dokumentasi API
+
+Jalankan prompt ini:
+
+Buatkan dokumentasi API untuk fitur Room pada backend Spring Boot yang
+sudah dibuat. Dokumentasi harus berisi:
+
+1\. Endpoint Deskripsi
+
+\- Nama endpoint
+
+\- Method (HTTP verb)
+
+\- Path URL
+
+\- Deskripsi singkat fungsinya
+
+2\. Request Format
+
+\- Header yang dibutuhkan (misalnya Content-Type: application/json)
+
+\- Contoh JSON body (untuk request yang membutuhkan payload)
+
+3\. Response Format
+
+\- Contoh response sukses (200/201)
+
+\- Contoh response error (400/404/500)
+
+4\. Sample Request untuk testing API
+
+\- Contoh curl command
+
+\- Contoh request di Postman (JSON body)
+
+Dokumentasi harus mencakup endpoint berikut:
+
+\- POST /api/rooms
+
+\- Membuat room baru dengan data dari \'RoomRequestDTO\'
+
+\- Validasi: \'roomNumber\' harus unik
+
+\- Jika duplikat, return error dengan status 400
+
+\- (Opsional, jika ada) GET /api/rooms
+
+\- Mengambil semua room yang tersedia
+
+Gunakan format markdown agar mudah dibaca, misalnya:
+
+\## Create Room
+
+POST \'/api/rooms\'
+
+\- Deskripsi: Membuat room baru
+
+\- Request body:
+
+json
+
+{
+
+\"roomNumber\": \"101\",
+
+\"type\": \"DELUXE\",
+
+\"capacity\": 2,
+
+\"price\": 500000.00
+
+}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image36.png){width="6.267716535433071in"
+height="3.5in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image33.png){width="6.267716535433071in"
+height="3.5in"}
+
+AI akan membuat file **API_DOCUMENTATION.md**
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image18.png){width="6.267716535433071in"
+height="3.5in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image16.png){width="6.267716535433071in"
+height="3.125in"}
+
+## Frontend
+
+## Pages & Components
+
+Gunakan
+[[https://aistudio.google.com/]{.underline}](https://aistudio.google.com/)
+untuk slicing UI dari gambar hasil export Figma, dan jalankan prompt
+berikut:
+
+Buatkan fitur Add Room untuk project frontend React + TypeScript +
+Tailwind dengan struktur project berikut:
+
+booking-fe/
+
+│── public/ \# Static files (images, icons, manifest, dll)
+
+│── src/
+
+│ │── app/ \# (khusus Next.js App Router)
+
+│ │ │── layout.tsx \# Layout global
+
+│ │ │── page.tsx \# Halaman utama
+
+│ │ └── \...
+
+│ │
+
+│ │── features/ \# Modularisasi by-feature
+
+│ │ │── auth/ \# Fitur authentication
+
+│ │ │ │── components/
+
+│ │ │ │── hooks/
+
+│ │ │ │── services/
+
+│ │ │ └── pages/
+
+│ │ │── dashboard/ \# Fitur dashboard
+
+│ │ │ │── components/
+
+│ │ │ └── pages/
+
+│ │
+
+│ │── components/ \# Reusable UI components (button, modal, input)
+
+│ │── hooks/ \# Reusable React hooks
+
+│ │── lib/ \# Library/helper (fetch wrapper, formatters)
+
+│ │── store/ \# State management (Redux/Zustand)
+
+│ │── styles/ \# Global CSS/Tailwind config
+
+│ │── types/ \# TypeScript types/interfaces
+
+│ │── utils/ \# Utility functions
+
+│
+
+│── .env \# Environment variables
+
+│── package.json
+
+│── tsconfig.json
+
+Task yang harus dibuat:
+
+1\. Create AddRoomPage.tsx component
+
+\- Lokasi: \'src/features/dashboard/pages/AddRoomPage.tsx\'
+
+\- Page ini menampilkan judul "Add New Room" dan menyertakan RoomForm.
+
+2\. Create RoomForm.tsx dengan validation & UI slicing
+
+\- Lokasi: \'src/features/dashboard/components/RoomForm.tsx\'
+
+\- Gunakan React Hook Form + Zod untuk validasi.
+
+\- Field form:
+
+\- \'roomNumber\' (string, required, unique)
+
+\- \'type\' (select: STANDARD, DELUXE, SUITE)
+
+\- \'capacity\' (number, required, min 1)
+
+\- \'price\' (number, required, min 0)
+
+\- \'description\' (textarea, optional)
+
+\- Tambahkan validasi: tampilkan error di bawah input jika tidak valid.
+
+\- UI harus di-slicing mengikuti desain dari gambar yang saya lampirkan
+(warna, spacing, typography, button style sesuai gambar).
+
+\- Pastikan layout responsive (desktop + mobile).
+
+3\. Add navigation dari Room List ke Add Room page
+
+\- Pada \'RoomListPage.tsx\' (asumsi sudah ada), tambahkan button "+ Add
+Room"
+
+\- Button akan navigate ke \'/dashboard/add-room\'.
+
+4\. Create success/error notification
+
+\- Buat reusable component \'Notification.tsx\' di
+\'src/components/Notification.tsx\'
+
+\- Tampilkan notifikasi sukses jika room berhasil ditambahkan, atau
+error jika gagal.
+
+\- Gunakan Tailwind untuk styling, tambahkan animasi sederhana (slide
+in/out).
+
+Tambahan aturan implementasi:
+
+\- Gunakan TypeScript interface \'Room\' dari \'src/types/room.ts\'
+
+\- Gunakan axios instance dari \'src/lib/axios.ts\' untuk API call
+
+\- Semua UI pakai TailwindCSS, responsive sesuai desain gambar
+
+\- Terapkan clean code: pisahkan page, form, service, dan komponen.
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image32.png){width="6.267716535433071in"
+height="3.0694444444444446in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image10.png){width="6.267716535433071in"
+height="3.0694444444444446in"}
+
+Setelah selesai di generate, **download app** dan extract di project
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image3.png){width="6.267716535433071in"
+height="3.9166666666666665in"}
+
+Install dependencies dengan menjalankan **npm install**
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image27.png){width="6.267716535433071in"
+height="4.041666666666667in"}
+
+Jalankan **npm run dev** untuk running aplikasi
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image14.png){width="6.267716535433071in"
+height="3.3055555555555554in"}
+
+## State & API
+
+Jalankan prompt ini:
+
+Buatkan integrasi Redux + Service untuk fitur Room dengan detail
+berikut:
+
+Task:
+
+1\. Create roomSlice.ts untuk Redux state
+
+\- Lokasi: \'src/store/roomSlice.ts\'
+
+\- Gunakan Redux Toolkit (\'createSlice\', \'createAsyncThunk\')
+
+\- State berisi:
+
+\- \'rooms\': Room\[\] (list room)
+
+\- \'loading\': boolean
+
+\- \'error\': string \| null
+
+\- Tambahkan async thunk \'createRoom()\' yang memanggil service API.
+
+\- Handle \'pending\', \'fulfilled\', \'rejected\'.
+
+2\. Create roomService.ts dengan createRoom() API call
+
+\- Lokasi: \'src/features/dashboard/services/roomService.ts\'
+
+\- Gunakan axios instance dari \'src/lib/axios.ts\'
+
+\- Method: \'POST /api/rooms\'
+
+\- Request body: \'RoomRequestDTO\'
+
+\- Return: \'RoomResponseDTO\'
+
+\- Jika error (status 400), lempar pesan error dari response.
+
+3\. Gunakan TypeScript types
+
+\- Buat interface di \'src/types/room.ts\':
+
+ts
+
+export interface RoomRequestDTO {
+
+adultCapacity: number;
+
+childrenCapacity: number;
+
+price: number;
+
+roomNumber: string;
+
+description?: string;
+
+isActive: boolean;
+
+roomType: \"STANDARD\" \| \"DELUXE\" \| \"SUITE\";
+
+}
+
+export interface RoomResponseDTO {
+
+id: number;
+
+adultCapacity: number;
+
+childrenCapacity: number;
+
+createdAt: string;
+
+price: number;
+
+roomNumber: string;
+
+updatedAt?: string;
+
+description?: string;
+
+isActive: boolean;
+
+roomType: \"STANDARD\" \| \"DELUXE\" \| \"SUITE\";
+
+}
+
+4\. API Spec
+
+\- Endpoint: \'POST /api/rooms\'
+
+\- Header: \'Content-Type: application/json\'
+
+\- Request body contoh:
+
+json
+
+{
+
+\"adultCapacity\": 2,
+
+\"childrenCapacity\": 1,
+
+\"price\": 1500000.00,
+
+\"roomNumber\": \"A101\",
+
+\"description\": \"Kamar standar dengan pemandangan kota.\",
+
+\"isActive\": true,
+
+\"roomType\": \"STANDARD\"
+
+}
+
+\- Response success (201):
+
+json
+
+{
+
+\"id\": 1,
+
+\"adultCapacity\": 2,
+
+\"childrenCapacity\": 1,
+
+\"createdAt\": \"2025-09-10T10:30:00\",
+
+\"price\": 1500000.00,
+
+\"roomNumber\": \"A101\",
+
+\"updatedAt\": \"2025-09-10T10:30:00\",
+
+\"description\": \"Kamar standar dengan pemandangan kota.\",
+
+\"isActive\": true,
+
+\"roomType\": \"STANDARD\"
+
+}
+
+\- Response error (400 - RoomAlreadyExistsException):
+
+\"Room with number A101 already exists.\"
+
+\- Response error (400 - Validation Error):
+
+json
+
+{
+
+\"roomNumber\": \"Room number cannot be empty\"
+
+}
+
+Aturan tambahan:
+
+\- Semua ditulis dengan TypeScript.
+
+\- Gunakan clean code (pisahkan slice, service, types).
+
+\- Pastikan error dari API ditangani dengan baik di Redux slice.
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image38.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image17.png){width="6.267716535433071in"
+height="3.5277777777777777in"}
+
+![](vertopal_5949f00581e1478196514708a8577f3e/media/image31.png){width="6.267716535433071in"
+height="3.125in"}
