@@ -8,7 +8,7 @@ Ini bukan tentang mengganti developer, melainkan memberdayakan mereka dengan "as
 ---
 # Guide
 >Pemahaman Project (Wajib untuk Semua)
-### Pendahuluan → Pahami konteks project
+### 1. Pendahuluan → Pahami konteks project
 
 Header dokumen: #Pendahuluan
 
@@ -17,7 +17,7 @@ Header dokumen: #Pendahuluan
 - Fitur Utama: Booking, dashboard monitoring, check-in/out, room service
 - Arsitektur: Spring Boot (Backend) + React (Frontend) + MySQL**
 
-### Teknologi dan Library → Stack teknologi yang digunakan
+### 2. Teknologi dan Library → Stack teknologi yang digunakan
 
 Header dokumen: #Teknologi_dan_library 
 
@@ -25,14 +25,14 @@ Header dokumen: #Teknologi_dan_library
 - Backend Stack: Spring Boot 3.2.0, Spring Security, JPA, MySQL
 - Authentication: JWT Tokens, OAuth2, BCrypt
 - Sub-bab: Frontend, Backend, Authentication & Security
-#### Struktur Project → Organisasi folder dan file
+### 3. Struktur Project → Organisasi folder dan file
 
 Header dokumen: #Struktur_Project
 
 - Frontend Structure: Features-based organization, components, hooks, store
 - Backend Structure: Clean architecture dengan controller, service, repository
 - Sub-bab: Frontend, Backend
-#### Struktur Database → ERD dan relasi tabel
+### 4. Struktur Database → ERD dan relasi tabel
 
 Header dokumen: #Struktur_Database
 
@@ -42,7 +42,7 @@ Header dokumen: #Struktur_Database
 ---
 ## Workflow Development 
 
-#### 1. Penggunaan AI dalam Project → Role AI dalam development
+### 1. Penggunaan AI dalam Project → Role AI dalam development
 
 Header dokumen: #Penggunaan_AI_dalam_Project
 
@@ -50,13 +50,13 @@ Header dokumen: #Penggunaan_AI_dalam_Project
 - Full-Stack Developer: Implementasi fitur
 - Code Reviewer: Review kode dan bug detection
 - Documentation Writer: Buat dokumentasi
-#### 2. Drafting Task → User story breakdown
+### 2. Drafting Task → User story breakdown
 
 Header dokumen: #Drafting_Task
 
 - Task Categories: Database & Models, Business Logic, State & API, Pages & Components
 - User Story: "User dapat menambahkan data kamar baru"
-#### 3. Instalasi Gemini CLI → Setup AI tools
+### 3. Instalasi Gemini CLI → Setup AI tools
 
 Header dokumen: #Instalasi_Gemini_CLI
 
@@ -64,7 +64,7 @@ Header dokumen: #Instalasi_Gemini_CLI
 - Setup Steps: Install, login, API key configuration
 - Commands: npm install -g @google/gemini-cli
 
-#### 4. Instalasi Qwen Code → Setup AI coding assistant
+### 4. Instalasi Qwen Code → Setup AI coding assistant
 
 Header dokumen: #Instalasi_Qwen_Code
 
