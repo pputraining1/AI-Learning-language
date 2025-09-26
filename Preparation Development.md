@@ -104,7 +104,7 @@ Proyek ini akan menggunakan kombinasi teknologi modern untuk pengembangan full-s
 
 Berikut adalah draf ERD yang menggambarkan relasi antar entitas utama dalam sistem Booking Assessment. Diagram ini bisa menjadi acuan dasar untuk perancangan database.
 
-![[ERD Booking.png]]
+![[ERD_Booking.png]]
 ### **Relasi hotel_booking_users dan hotel_booking_bookings**
 
 - **Jenis Relasi**: One-to-Many
