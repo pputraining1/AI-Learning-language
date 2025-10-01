@@ -60,7 +60,9 @@ Tujuannya: mengurangi jawaban “ngaco” dan memastikan hasil sesuai kebutuhan 
 	- Bisa berupa generate code, buat arsitektur, atau refactor.
 	- Fokus 1 tugas per prompt (lebih rapi & terarah).
 	Contoh:
+	
 	![KerangkaPrompting](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/KP3.png?raw=true)
+	
 4. Check
 	Bagian ini membantu AI mengevaluasi hasilnya sendiri sebelum memberikan output.
 	- Format output yang diinginkan (Java class, TSX file).
