@@ -104,4 +104,4 @@ Tujuannya: mengurangi jawaban “ngaco” dan memastikan hasil sesuai kebutuhan 
 	Agar mempermudah untuk mendeteksi issue pada IDE
 6. Iterasi dengan AI
 	Kalau saat manual check Anda temukan issue, kembalikan ke AI dengan prompt spesifik:
-	![CodeReview](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/KP5.png?raw=true)
+	![CodeReview](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/CR1.png?raw=true)
