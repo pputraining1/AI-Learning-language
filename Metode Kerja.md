@@ -1,5 +1,3 @@
-**
-
 ## Metode Prompting
 
 1. Persiapan Input
