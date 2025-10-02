@@ -48,52 +48,72 @@ Setup Spring Boot menggunakan Hibernate JPA dengan konfigurasi database MySQL lo
    - roomType (Enum: STANDARD, DELUXE, SUITE, @Enumerated(EnumType.STRING))
 ```
 
+```
 2. Buat entity class 'Room' di package 'entity' dengan Hibernate annotations sesuai schema di atas.
 
+```
+
+```
 3. Buat DTO di package 'dto':
 	   - RoomRequestDTO' untuk input request
 	   - RoomResponseDTO' untuk output response
+```
 
-3. Buat 'RoomRepository' di package 'repository' yang extend JpaRepository<Room, Long>.
+```
+4. Buat 'RoomRepository' di package 'repository' yang extend JpaRepository<Room, Long>.
+```
 
-4. Pastikan Hibernate mengelola entity 'Room':
+```
+5. Pastikan Hibernate mengelola entity 'Room':
 	   - Mapping kolom 'roomNumber' dengan unique constraint
 	   - Mapping kolom 'createdAt' dan 'updatedAt' dengan otomatisasi Hibernate
 	   - Mapping enum 'roomType' dengan '@Enumerated(EnumType.STRING)'
+```
 
-5. Atur 'application.properties' untuk koneksi ke MySQL:
+```
+6. Atur 'application.properties' untuk koneksi ke MySQL:
 	   - spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db
 	   - spring.datasource.username=root
 	   - spring.datasource.password=root
 	   - spring.jpa.hibernate.ddl-auto=update
 	   - spring.jpa.show-sql=true
 	   - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect  
+```
 
 Gunakan praktik clean code sesuai struktur project Spring Boot di atas.
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DBM1.png?raw=true)
 
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DBM2.png?raw=true)
 ## Business Logic
 Jalankan prompt berikut:
 
 Tambahkan pada project backend Spring Boot berikut:
 
+```
 1. Buat method 'createRoom(RoomRequestDTO request)' di 'RoomService':
    - Menerima data dari RoomRequestDTO
    - Mengecek apakah roomNumber sudah ada di database (gunakan RoomRepository)
    - Jika sudah ada, lempar custom exception 'RoomAlreadyExistsException'
    - Jika belum ada, simpan data baru ke table 'rooms'
    - Return RoomResponseDTO setelah berhasil disimpan
+```
 
+```
 2. Buat endpoint POST '/api/rooms' di 'RoomController':
    - Menerima request body JSON yang dipetakan ke RoomRequestDTO
    - Memanggil 'roomService.createRoom()'
    - Mengembalikan response dalam bentuk RoomResponseDTO dengan status 201 CREATED
    - Tangani exception 'RoomAlreadyExistsException' dan kembalikan status 400 BAD REQUEST dengan pesan error
+```
 
+```
 3. Tambahkan validasi untuk roomNumber uniqueness:
    - Pada level DTO gunakan '@NotBlank' untuk memastikan tidak kosong
    - Pada level service pastikan roomNumber tidak duplikat dengan query ke RoomRepository
    - Gunakan custom exception untuk error handling
+```
 
+```
 4. Pastikan semua class berada di package sesuai struktur:
    - 'controller/RoomController.java'
    - 'service/RoomService.java'
@@ -101,12 +121,15 @@ Tambahkan pada project backend Spring Boot berikut:
    - 'exception/RoomAlreadyExistsException.java'
    - 'repository/RoomRepository.java'
    - 'entity/Room.java'
+```
 
+```
 5. Pastikan semua kode menggunakan praktik clean architecture Spring Boot:
    - DTO dipakai hanya di lapisan controller/service
    - Entity hanya di repository/service
    - Validasi pakai Hibernate Validator ('@NotBlank', dsb)
    - Exception ditangani oleh global exception handler di package 'exception'
+```
 
 ## Dokumentasi API
 
@@ -114,23 +137,31 @@ Jalankan prompt ini:
 
 Buatkan dokumentasi API untuk fitur Room pada backend Spring Boot yang sudah dibuat. Dokumentasi harus berisi:
 
+```
 1. Endpoint Deskripsi
    - Nama endpoint
    - Method (HTTP verb)
    - Path URL
    - Deskripsi singkat fungsinya
+```
 
+```
 2. Request Format
    - Header yang dibutuhkan (misalnya Content-Type: application/json)
    - Contoh JSON body (untuk request yang membutuhkan payload)
+```
 
+```
 3. Response Format
    - Contoh response sukses (200/201)
    - Contoh response error (400/404/500)
+```
 
+```
 4. Sample Request untuk testing API
    - Contoh curl command
    - Contoh request di Postman (JSON body)
+```
 
 Dokumentasi harus mencakup endpoint berikut:
 
