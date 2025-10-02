@@ -40,11 +40,18 @@ Berikut adalah beberapa cara di mana AI dapat diintegrasikan ke dalam alur kerja
 
 ## Getting Started
 
-[[Introduction And Guide]]
-[Installasi AI Agent dan Metode Development]
-[Preparation Development]
+### Getting Started
 
+Selamat datang! Panduan ini akan membantu Anda memahami struktur dokumentasi proyek ini dan bagaimana cara menavigasinya dengan efektif.
 
-## Contributing
+Dokumentasi kami disusun secara berurutan untuk mempermudah alur kerja Anda, dimulai dari persiapan hingga implementasi. Berikut adalah navigasi utama yang perlu Anda ketahui:
 
-[Bagian ini bisa diisi dengan panduan untuk kontribusi jika ini adalah proyek _open-source_.]
+- **[[Introduction and Guide]]**: Bagian ini adalah titik awal Anda. Di sini, Anda akan menemukan gambaran umum proyek dan panduan singkat tentang cara menggunakan dokumentasi ini.
+    
+- **[[AI Agent Installation]]**: Sebelum memulai, Anda perlu menginstal agen AI yang diperlukan. Bagian ini menyediakan panduan langkah demi langkah untuk proses instalasi.
+    
+- **[[Development Preparation]]**: Setelah instalasi, bagian ini akan memandu Anda melalui semua persiapan yang diperlukan sebelum memulai pengembangan. Ini mencakup konfigurasi awal dan persyaratan lainnya.
+    
+- **[[Development Method]]**: Di sini, Anda akan menemukan metodologi dan pendekatan yang kami gunakan dalam pengembangan. Ini adalah panduan inti yang menjelaskan bagaimana AI diintegrasikan ke dalam alur kerja pengembangan.
+    
+- **[[Implementation]]**: Bagian terakhir ini berisi contoh kode, studi kasus, dan detail teknis untuk membantu Anda mengimplementasikan konsep-konsep yang telah dibahas.
