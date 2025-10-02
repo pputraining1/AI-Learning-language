@@ -376,8 +376,8 @@ Aturan tambahan:
 - Pastikan error dari API ditangani dengan baik di Redux slice.
 ```
 
-![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/PC5.png?raw=true)
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/STAPI1.png?raw=true)
 
-![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/PC5.png?raw=true)
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/STAPI2.png?raw=true)
 
-![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/PC5.png?raw=true)
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/STAPI3.png?raw=true)
