@@ -171,12 +171,9 @@ POST /api/rooms
 - Jika duplikat, return error dengan status 400
 
 (Opsional, jika ada) GET /api/rooms
-  - Mengambil semua room yang tersedia
+- Mengambil semua room yang tersedia
 
 Gunakan format markdown agar mudah dibaca, misalnya:
-
-  
-
 ## Create Room
 
 POST '/api/rooms'
@@ -196,6 +193,8 @@ POST '/api/rooms'
 
 }
 ```
+
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DBM2.png?raw=true)
 
 AI akan membuat file API_DOCUMENTATION.md
 
