@@ -213,56 +213,38 @@ Gunakan [https://aistudio.google.com/](https://aistudio.google.com/) untuk slici
 Task yang harus dibuat:
 
 1. Create AddRoomPage.tsx component
-   - Lokasi: 'src/features/dashboard/pages/AddRoomPage.tsx'
-   - Page ini menampilkan judul “Add New Room” dan menyertakan RoomForm.
+	- Lokasi: 'src/features/dashboard/pages/AddRoomPage.tsx'
+	- Page ini menampilkan judul “Add New Room” dan menyertakan RoomForm.
 
-1. Create RoomForm.tsx dengan validation & UI slicing
-   - Lokasi: 'src/features/dashboard/components/RoomForm.tsx'
-   - Gunakan React Hook Form + Zod untuk validasi.
-   - Field form:
-     - 'roomNumber' (string, required, unique)
-     - 'type' (select: STANDARD, DELUXE, SUITE)
-     - 'capacity' (number, required, min 1)
-     - 'price' (number, required, min 0)
-     - 'description' (textarea, optional)
-
-   - Tambahkan validasi: tampilkan error di bawah input jika tidak valid.
-
-   - UI harus di-slicing mengikuti desain dari gambar yang saya lampirkan (warna, spacing, typography, button style sesuai gambar).
-
-   - Pastikan layout responsive (desktop + mobile).
-
-  
+2. Create RoomForm.tsx dengan validation & UI slicing
+	- Lokasi: 'src/features/dashboard/components/RoomForm.tsx'
+	- Gunakan React Hook Form + Zod untuk validasi.
+	- Field form:
+		 - 'roomNumber' (string, required, unique)
+		 - 'type' (select: STANDARD, DELUXE, SUITE)
+		 - 'capacity' (number, required, min 1)
+		 - 'price' (number, required, min 0)
+		 - 'description' (textarea, optional)
+		 - Tambahkan validasi: tampilkan error di bawah input jika tidak valid.
+		 - UI harus di-slicing mengikuti desain dari gambar yang saya lampirkan (warna, spacing, typography, button style sesuai gambar).
+		 - Pastikan layout responsive (desktop + mobile).
 
 3. Add navigation dari Room List ke Add Room page
-
-   - Pada 'RoomListPage.tsx' (asumsi sudah ada), tambahkan button “+ Add Room”
-
-   - Button akan navigate ke '/dashboard/add-room'.
-
-  
+	 - Pada 'RoomListPage.tsx' (asumsi sudah ada), tambahkan button “+ Add Room”
+	 - Button akan navigate ke '/dashboard/add-room'.
 
 4. Create success/error notification
-
-   - Buat reusable component 'Notification.tsx' di 'src/components/Notification.tsx'
-
-   - Tampilkan notifikasi sukses jika room berhasil ditambahkan, atau error jika gagal.
-
-   - Gunakan Tailwind untuk styling, tambahkan animasi sederhana (slide in/out).
-
-  
+	- Buat reusable component 'Notification.tsx' di 'src/components/Notification.tsx'
+	- Tampilkan notifikasi sukses jika room berhasil ditambahkan, atau error jika gagal.
+	- Gunakan Tailwind untuk styling, tambahkan animasi sederhana (slide in/out).
 
 Tambahan aturan implementasi:
-
 - Gunakan TypeScript interface 'Room' dari 'src/types/room.ts'
-
 - Gunakan axios instance dari 'src/lib/axios.ts' untuk API call
-
 - Semua UI pakai TailwindCSS, responsive sesuai desain gambar
-
 - Terapkan clean code: pisahkan page, form, service, dan komponen.
 
-  
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DOKAPI4.png?raw=true)
 
 Setelah selesai di generate, download app dan extract di project
 
