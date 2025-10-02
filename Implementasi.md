@@ -25,13 +25,16 @@ User dapat menambahkan data kamar baru
 
 Jalankan prompt berikut:
 
+```
 Setup Spring Boot menggunakan Hibernate JPA dengan konfigurasi database MySQL localhost:
 - host: localhost
 - port: 3306
 - database: hotel_db
 - username: root
 - password: 
+```
 
+```
 1. Buat schema 'rooms' table di MySQL dengan field-field berikut (deskripsi sederhana):
    - id (Long, @Id, @GeneratedValue)
    - adultCapacity (int)
@@ -43,27 +46,28 @@ Setup Spring Boot menggunakan Hibernate JPA dengan konfigurasi database MySQL lo
    - description (String, nullable)
    - isActive (boolean)
    - roomType (Enum: STANDARD, DELUXE, SUITE, @Enumerated(EnumType.STRING))
+```
 
-1. Buat entity class 'Room' di package 'entity' dengan Hibernate annotations sesuai schema di atas.
+2. Buat entity class 'Room' di package 'entity' dengan Hibernate annotations sesuai schema di atas.
 
-2. Buat DTO di package 'dto':
-   - 'RoomRequestDTO' untuk input request
-   - 'RoomResponseDTO' untuk output response
+3. Buat DTO di package 'dto':
+	   - RoomRequestDTO' untuk input request
+	   - RoomResponseDTO' untuk output response
 
 3. Buat 'RoomRepository' di package 'repository' yang extend JpaRepository<Room, Long>.
 
 4. Pastikan Hibernate mengelola entity 'Room':
-   - Mapping kolom 'roomNumber' dengan unique constraint
-   - Mapping kolom 'createdAt' dan 'updatedAt' dengan otomatisasi Hibernate
-   - Mapping enum 'roomType' dengan '@Enumerated(EnumType.STRING)'
+	   - Mapping kolom 'roomNumber' dengan unique constraint
+	   - Mapping kolom 'createdAt' dan 'updatedAt' dengan otomatisasi Hibernate
+	   - Mapping enum 'roomType' dengan '@Enumerated(EnumType.STRING)'
 
 5. Atur 'application.properties' untuk koneksi ke MySQL:
-   - spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db
-   - spring.datasource.username=root
-   - spring.datasource.password=root
-   - spring.jpa.hibernate.ddl-auto=update
-   - spring.jpa.show-sql=true
-   - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect  
+	   - spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db
+	   - spring.datasource.username=root
+	   - spring.datasource.password=root
+	   - spring.jpa.hibernate.ddl-auto=update
+	   - spring.jpa.show-sql=true
+	   - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect  
 
 Gunakan praktik clean code sesuai struktur project Spring Boot di atas.
 
