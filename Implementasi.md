@@ -165,14 +165,12 @@ Buatkan dokumentasi API untuk fitur Room pada backend Spring Boot yang sudah dib
 
 Dokumentasi harus mencakup endpoint berikut:
 
-1. POST /api/rooms
-
+POST /api/rooms
   - Membuat room baru dengan data dari 'RoomRequestDTO'
   - Validasi: 'roomNumber' harus unik
   - Jika duplikat, return error dengan status 400
 
-1. (Opsional, jika ada) GET /api/rooms
-
+(Opsional, jika ada) GET /api/rooms
   - Mengambil semua room yang tersedia
 
 Gunakan format markdown agar mudah dibaca, misalnya:
