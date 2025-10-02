@@ -194,108 +194,36 @@ POST '/api/rooms'
 }
 ```
 
-![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DBM2.png?raw=true)
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DOKAPI1.png?raw=true)
+
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DOKAPI2.png?raw=true)
 
 AI akan membuat file API_DOCUMENTATION.md
 
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DOKAPI3.png?raw=true)
+
+![DatabaseModel](https://github.com/pputraining1/AI-Learning-language/blob/main/Img/DOKAPI4.png?raw=true)
 ## Frontend
 
 ## Pages & Components
 
 Gunakan [https://aistudio.google.com/](https://aistudio.google.com/) untuk slicing UI dari gambar hasil export Figma, dan jalankan prompt berikut:
 
-  
-
-Buatkan fitur Add Room untuk project frontend React + TypeScript + Tailwind dengan struktur project berikut:
-
-  
-
-booking-fe/
-
-│── public/                 # Static files (images, icons, manifest, dll)
-
-│── src/
-
-│   │── app/                # (khusus Next.js App Router)
-
-│   │   │── layout.tsx      # Layout global
-
-│   │   │── page.tsx        # Halaman utama
-
-│   │   └── ...
-
-│   │
-
-│   │── features/           # Modularisasi by-feature
-
-│   │   │── auth/           # Fitur authentication
-
-│   │   │   │── components/
-
-│   │   │   │── hooks/
-
-│   │   │   │── services/
-
-│   │   │   └── pages/
-
-│   │   │── dashboard/      # Fitur dashboard
-
-│   │   │   │── components/
-
-│   │   │   └── pages/
-
-│   │
-
-│   │── components/         # Reusable UI components (button, modal, input)
-
-│   │── hooks/              # Reusable React hooks
-
-│   │── lib/                # Library/helper (fetch wrapper, formatters)
-
-│   │── store/              # State management (Redux/Zustand)
-
-│   │── styles/             # Global CSS/Tailwind config
-
-│   │── types/              # TypeScript types/interfaces
-
-│   │── utils/              # Utility functions
-
-│
-
-│── .env                    # Environment variables
-
-│── package.json
-
-│── tsconfig.json
-
-  
 
 Task yang harus dibuat:
 
 1. Create AddRoomPage.tsx component
-
    - Lokasi: 'src/features/dashboard/pages/AddRoomPage.tsx'
-
    - Page ini menampilkan judul “Add New Room” dan menyertakan RoomForm.
 
-  
-
-2. Create RoomForm.tsx dengan validation & UI slicing
-
+1. Create RoomForm.tsx dengan validation & UI slicing
    - Lokasi: 'src/features/dashboard/components/RoomForm.tsx'
-
    - Gunakan React Hook Form + Zod untuk validasi.
-
    - Field form:
-
      - 'roomNumber' (string, required, unique)
-
      - 'type' (select: STANDARD, DELUXE, SUITE)
-
      - 'capacity' (number, required, min 1)
-
      - 'price' (number, required, min 0)
-
      - 'description' (textarea, optional)
 
    - Tambahkan validasi: tampilkan error di bawah input jika tidak valid.
